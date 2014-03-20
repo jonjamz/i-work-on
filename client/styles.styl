@@ -1,0 +1,92 @@
+@import 'nib'
+
+body
+  font-family "Lora", serif
+  font-weight 300
+  text-align center
+  color #111
+
+.top, .toggle
+  transition height 0.5s ease-in-out, opacity 0.5s ease-in-out
+
+.top, .bottom
+  float left
+  width 100%
+
+.toggle
+  width 70px
+  display none
+
+  @media only screen and (max-device-width: 1024px)
+    display block
+
+.top
+  position relative
+  border-bottom 1px solid #CCC
+
+  .toggle-open
+    position absolute
+    bottom 0
+    left 0
+    z-index 2 // Over the close button
+
+.top.loggedIn
+  overflow hidden
+  height 103px
+  &:hover, &:focus
+    height 445px
+    .toggle-open
+      opacity 0
+      z-index 0 // Under the close button
+
+.bottom
+  position relative
+
+  .toggle-close
+    position absolute
+    left 0
+    top -37px
+    z-index 1
+
+
+.tagsinput
+  display inline-block
+
+#task-input
+  width 306px
+  height 100px
+
+#new-task-form button
+  margin 10px
+
+button, #login-buttons .login-button, .accounts-dialog .login-button
+  font-size 16px
+  line-height 24px
+  font-weight 400
+  background #6547F3
+  color #FFF
+  border 0
+  border-radius 3px
+  padding 4px 12px
+
+ul
+  list-style none
+  padding 0
+  margin 0
+
+  li
+
+    header
+      font-size 90px
+      margin-top 40px
+      margin-bottom 10px
+
+    span
+      margin 20px 0 0
+      display inline-block
+
+    .button-container
+      font-size 24px
+
+    .tags-container
+      font-size 18px
